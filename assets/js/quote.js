@@ -15,6 +15,8 @@
       var phone   = (form.querySelector('[name=phone]')   || {}).value || '';
       var email   = (form.querySelector('[name=email]')   || {}).value || '';
       var address = (form.querySelector('[name=address]') || {}).value || '';
+      var notifyEl = form.querySelector('[name=notify]:checked');
+      var notify  = notifyEl ? notifyEl.value : 'both';
 
       btn.disabled = true;
       btn.textContent = 'Getting your quote…';
@@ -28,6 +30,7 @@
           email:   email.trim(),
           address: address.trim(),
           price:   price,
+          notify:  notify,
         });
         window.location.href = 'estimate.html?' + params.toString();
       } catch (err) {

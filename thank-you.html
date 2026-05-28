@@ -55,8 +55,19 @@
     var p       = new URLSearchParams(location.search);
     var method  = p.get('method')  || 'card';
     var name    = p.get('name')    || 'there';
+    var phone   = p.get('phone')   || '';
+    var email   = p.get('email')   || '';
     var address = p.get('address') || '';
     var price   = parseFloat(p.get('price') || '0');
+    var notify  = p.get('notify')  || 'both';
+
+    if (p.get('redirect_status') === 'succeeded') {
+      fetch('/api/notify-booking', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, phone: phone, email: email, address: address, price: price, notify: notify }),
+      });
+    }
 
     document.getElementById('confirm-name').textContent = 'Thanks, ' + name + '!';
 

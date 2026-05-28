@@ -79,6 +79,21 @@
         <label for="hq-address">Service Address</label>
         <input id="hq-address" name="address" autocomplete="street-address" required>
 
+        <fieldset style="border:none;padding:0;margin:0;">
+          <legend style="font-size:14px;font-weight:600;margin-bottom:8px;color:var(--text);">How would you like to receive updates?</legend>
+          <div style="display:flex;gap:20px;flex-wrap:wrap;">
+            <label style="display:flex;align-items:center;gap:6px;font-weight:400;cursor:pointer;">
+              <input type="radio" name="notify" value="email" required> Email
+            </label>
+            <label style="display:flex;align-items:center;gap:6px;font-weight:400;cursor:pointer;">
+              <input type="radio" name="notify" value="text"> Text
+            </label>
+            <label style="display:flex;align-items:center;gap:6px;font-weight:400;cursor:pointer;">
+              <input type="radio" name="notify" value="both" checked> Both
+            </label>
+          </div>
+        </fieldset>
+
         <button class="btn btn-primary" type="submit">Get My Instant Quote</button>
         <p data-quote-error hidden style="color:#b91c1c;font-size:13px;margin:0;">
           Something went wrong. Please call <b>281-624-6514</b>.

@@ -68,7 +68,9 @@
     var price   = parseFloat(p.get('price')   || '0');
     var name    = p.get('name')    || '';
     var email   = p.get('email')   || '';
+    var phone   = p.get('phone')   || '';
     var address = p.get('address') || '';
+    var notify  = p.get('notify')  || 'both';
 
     // If no quote data in URL, redirect home
     if (!price || !address) {
@@ -81,7 +83,7 @@
     document.getElementById('est-address').textContent =
       address ? 'Service address: ' + address : '';
 
-    var pp = new URLSearchParams({ name: name, email: email, address: address, price: price });
+    var pp = new URLSearchParams({ name: name, phone: phone, email: email, address: address, price: price, notify: notify });
     document.getElementById('book-btn').href = 'payment.html?' + pp.toString();
   </script>
 </body>
