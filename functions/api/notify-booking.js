@@ -79,6 +79,20 @@ export async function onRequestPost(context) {
     sends.push(ownerSms, customerSms);
   }
 
-  await Promise.allSettled(sends);
-  return Response.json({ ok: true });
+  const results = await Promise.allSettled(sends);
+  const detail  = await Promise.all(results.map(async (r, i) => {
+    if (r.status === 'fulfilled') {
+      const text = await r.value.text();
+      return { i, status: r.value.status, body: text };
+    }
+    return { i, error: r.reason?.message };
+  }));
+
+  return Response.json({
+    ok: true,
+    hasTwilio: !!(twilioSid && twilioAuth && twilioFrom),
+    hasResend: !!resendKey,
+    notify,
+    detail,
+  });
 }
