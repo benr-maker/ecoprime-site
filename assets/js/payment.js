@@ -4,6 +4,7 @@ var STRIPE_PK = 'pk_test_51TUudQRew1gCXHq7arYxLYvD5KJaYNmf6yfTTMfCX3utQ5dEV1meCM
   var p       = new URLSearchParams(location.search);
   var price   = parseFloat(p.get('price')   || '0');
   var name    = p.get('name')    || '';
+  var email   = p.get('email')   || '';
   var address = p.get('address') || '';
 
   if (!price || !address) {
@@ -17,7 +18,7 @@ var STRIPE_PK = 'pk_test_51TUudQRew1gCXHq7arYxLYvD5KJaYNmf6yfTTMfCX3utQ5dEV1meCM
     '<strong>Price:</strong> $'  + price.toFixed(2) + ' per visit';
 
   document.getElementById('back-link').href =
-    'estimate.html?' + new URLSearchParams({ name: name, address: address, price: price });
+    'estimate.html?' + new URLSearchParams({ name: name, email: email, address: address, price: price });
 
   var stripe   = Stripe(STRIPE_PK);
   var elements;
@@ -46,7 +47,7 @@ var STRIPE_PK = 'pk_test_51TUudQRew1gCXHq7arYxLYvD5KJaYNmf6yfTTMfCX3utQ5dEV1meCM
     setSubmitting(true);
 
     var returnUrl = window.location.origin + '/thank-you.html?' +
-      new URLSearchParams({ name: name, address: address, price: price, method: 'card' });
+      new URLSearchParams({ name: name, email: email, address: address, price: price, method: 'card' });
 
     stripe.confirmPayment({ elements: elements, confirmParams: { return_url: returnUrl } })
       .then(function (result) {

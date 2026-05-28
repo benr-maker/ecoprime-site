@@ -13,6 +13,7 @@
       var errMsg = form.querySelector('[data-quote-error]');
       var name    = (form.querySelector('[name=name]')    || {}).value || '';
       var phone   = (form.querySelector('[name=phone]')   || {}).value || '';
+      var email   = (form.querySelector('[name=email]')   || {}).value || '';
       var address = (form.querySelector('[name=address]') || {}).value || '';
 
       btn.disabled = true;
@@ -24,6 +25,7 @@
         var params = new URLSearchParams({
           name:    name.trim(),
           phone:   phone.trim(),
+          email:   email.trim(),
           address: address.trim(),
           price:   price,
         });
