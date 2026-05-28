@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Quote | EcoPrime Lawn Care</title>
+  <meta name="description" content="Your instant EcoPrime lawn care quote." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        <img src="assets/img/ecoprime_logo_darkgreen.png" alt="EcoPrime Lawn Care logo" />
+        <div class="brand-text">
+          <strong>EcoPrime</strong>
+          <span>Quiet • Zero Emission • Precision</span>
+        </div>
+      </a>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="tel:12816246514">Call: 281-624-6514</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <div class="quote-result card">
+        <h1 style="margin-top:0;">Your EcoPrime Quote</h1>
+        <p id="est-address" style="color:var(--muted);"></p>
+
+        <div class="quote-box">
+          <div class="quote-label">Estimated price per visit</div>
+          <div class="quote-price" id="est-price">—</div>
+          <div class="quote-note">
+            Based on your property size. Final price confirmed before first service.
+          </div>
+        </div>
+
+        <p style="color:var(--muted);margin-top:20px;">
+          Ready to book? Confirm your service below, or call us if you have questions.
+        </p>
+
+        <div class="hero-actions" style="justify-content:center;margin-top:8px;">
+          <a class="btn btn-primary" id="book-btn" href="#">Book This Visit</a>
+          <a class="btn btn-ghost" href="index.html">No Thanks</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+      <div>© <span id="y"></span> EcoPrime Lawn Care</div>
+      <div>
+        <a href="tel:12816246514">281-624-6514</a> ·
+        <a href="index.html">Home</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    var p = new URLSearchParams(location.search);
+    var price   = parseFloat(p.get('price')   || '0');
+    var name    = p.get('name')    || '';
+    var address = p.get('address') || '';
+
+    // If no quote data in URL, redirect home
+    if (!price || !address) {
+      window.location.href = 'index.html#quote';
+    }
+
+    document.getElementById('est-price').textContent =
+      price ? '$' + price.toFixed(2) + ' / visit' : '—';
+
+    document.getElementById('est-address').textContent =
+      address ? 'Service address: ' + address : '';
+
+    var pp = new URLSearchParams({ name: name, address: address, price: price });
+    document.getElementById('book-btn').href = 'payment.html?' + pp.toString();
+  </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | EcoPrime Lawn Care</title>
+  <meta name="description" content="Request a quote from EcoPrime Lawn Care. Call/text 281-624-6514." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        <img src="assets/img/ecoprime_logo_darkgreen.png" alt="EcoPrime Lawn Care logo" />
+        <div class="brand-text">
+          <strong>EcoPrime</strong>
+          <span>Quiet • Zero Emission • Precision</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="services.html">Services</a>
+        <a data-nav href="pricing.html">Pricing</a>
+        <a data-nav href="about.html">About</a>
+        <a data-nav href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="tel:12816246514">Call: 281-624-6514</a>
+        <a class="btn btn-primary" href="tel:12816246514">Call Now</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-title">
+      <div class="container">
+        <h1>Request a quote</h1>
+        <p>Call/text <b>281-624-6514</b> or send details below.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card">
+          <form class="form"
+                action="https://formsubmit.co/ecoprime@earthlink.net"
+                method="POST">
+            <input type="hidden" name="_subject" value="EcoPrime Quote Request" />
+            <input type="hidden" name="_next" value="thank-you.html" />
+            <input type="hidden" name="_captcha" value="true" />
+
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" autocomplete="name" required />
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" inputmode="tel" autocomplete="tel" required />
+              <small>We’ll only use this to contact you about service.</small>
+            </div>
+
+            <div class="field">
+              <label for="address">Service address</label>
+              <input id="address" name="address" autocomplete="street-address" required />
+            </div>
+
+            <div class="field">
+              <label for="schedule">Preferred schedule</label>
+              <select id="schedule" name="schedule">
+                <option>Weekly</option>
+                <option>Bi-weekly</option>
+                <option>One-time / Seasonal</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">What do you need?</label>
+              <textarea id="message" name="message" placeholder="Example: mow/edge + shrubs, gate access notes, pets, etc." required></textarea>
+            </div>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <button class="btn btn-primary" type="submit">Send Request</button>
+              <a class="btn btn-ghost" href="tel:12816246514">Or Call 281-624-6514</a>
+            </div>
+
+            <small>
+              FormSubmit may ask you to confirm your email address the first time a form is submitted.
+            </small>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+      <div>© <span id="y"></span> EcoPrime Lawn Care</div>
+      <div><a href="tel:12816246514">281-624-6514</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

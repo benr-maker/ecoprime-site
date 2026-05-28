@@ -1,0 +1,47 @@
+❯ advice or instructions on how to subscribe to payment services like stripe and paypal                                                                                                                    
+
+⏺ Signing up for Stripe
+
+  1. Go to stripe.com and click Start now — no business license required to open an account
+  2. Enter your email, name, and password
+  3. Verify your email
+  4. Fill in your business profile: business type (you can select "Individual/Sole proprietor"), country, industry (Home Services), and your EIN or SSN
+  5. Add a bank account so payouts deposit automatically
+  6. Once approved you'll have access to the dashboard
+
+  Keys you need for this site:
+  - Dashboard → Developers → API keys
+  - Copy the Publishable key (starts with pk_live_...) → goes in assets/js/payment.js
+  - Copy the Secret key (starts with sk_live_...) → goes in Cloudflare Pages env vars as STRIPE_SECRET_KEY
+
+  Stripe also gives you test keys (pk_test_... / sk_test_...) so you can run the full payment flow with fake card numbers before going live. Use those first.
+
+  ---
+  Signing up for PayPal Business
+
+  1. Go to paypal.com and click Sign Up
+  2. Choose Business account (not personal)
+  3. Enter your email and create a password
+  4. Provide business details — name, address, phone, business type
+  5. Link a bank account or debit card
+
+  Keys you need for this site:
+  - Go to developer.paypal.com → log in with your PayPal account
+  - Click Apps & Credentials
+  - Create a new app — it generates a Client ID and Secret
+  - The Client ID (public) → goes in payment.html in the PayPal <script> tag and in Cloudflare env vars as PAYPAL_CLIENT_ID
+  - The Secret (private) → goes in Cloudflare env vars as PAYPAL_CLIENT_SECRET
+
+  PayPal also has a Sandbox environment with test accounts, so you can verify the full flow before real money moves.
+
+  ---
+  Recommended order
+
+  1. Sign up for both using test/sandbox credentials first
+  2. Drop the test keys into the site and verify the full flow end-to-end
+  3. Swap in the live keys only when you're satisfied everything works
+
+  Neither service charges a monthly fee — both take a small percentage per transaction (typically around 2.9% + $0.30 per charge).
+
+✻ Brewed for 13s
+

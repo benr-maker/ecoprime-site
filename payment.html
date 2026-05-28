@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Complete Booking | EcoPrime Lawn Care</title>
+  <meta name="description" content="Confirm your EcoPrime lawn care booking." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        <img src="assets/img/ecoprime_logo_darkgreen.png" alt="EcoPrime Lawn Care logo" />
+        <div class="brand-text">
+          <strong>EcoPrime</strong>
+          <span>Quiet • Zero Emission • Precision</span>
+        </div>
+      </a>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="tel:12816246514">Call: 281-624-6514</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <div class="card" style="max-width:520px;margin:0 auto;">
+
+        <h1 style="margin-top:0;font-size:clamp(22px,3vw,30px);">Complete Your Booking</h1>
+
+        <div class="confirm-detail" id="pay-summary" style="margin-bottom:24px;"></div>
+
+        <p id="pay-error" style="color:#c0392b;font-size:14px;margin-bottom:16px;display:none;"></p>
+
+        <p id="pay-loading" style="color:var(--muted);font-size:14px;margin-bottom:20px;">
+          Loading payment form…
+        </p>
+
+        <form id="stripe-form" style="display:none;">
+          <div id="payment-element" style="margin-bottom:20px;"></div>
+          <button class="btn btn-primary" id="submit-btn" type="submit" style="width:100%;">
+            Pay Now
+          </button>
+        </form>
+
+        <div style="margin-top:14px;text-align:center;">
+          <a class="btn btn-ghost" href="estimate.html" id="back-link">← Back to Quote</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+      <div>© <span id="y"></span> EcoPrime Lawn Care</div>
+      <div><a href="tel:12816246514">281-624-6514</a></div>
+    </div>
+  </footer>
+
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <script src="assets/js/payment.js"></script>
+</body>
+</html>

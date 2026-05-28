@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EcoPrime Lawn Care | Quiet. Zero Emission. Precision.</title>
+  <meta name="description" content="EcoPrime Lawn Care — quiet, zero-emission lawn care with precision results. Call 281-624-6514 for a quote." />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html" aria-label="EcoPrime Lawn Care home">
+        <img src="assets/img/ecoprime_logo_darkgreen.png" alt="EcoPrime Lawn Care logo" />
+        <div class="brand-text">
+          <strong>EcoPrime Shaheen Group</strong>
+          <span>Quiet • Zero Emission • Precision</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a data-nav href="index.html">Home</a>
+        <a data-nav href="services.html">Services</a>
+        <a data-nav href="pricing.html">Pricing</a>
+        <a data-nav href="about.html">About</a>
+        <a data-nav href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="tel:12816246514" aria-label="Call EcoPrime at 281-624-6514">Call: 281-624-6514</a>
+        <a class="btn btn-primary" href="contact.html">Get a Quote</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+<section class="hero hero-full lead-hero">
+  <div class="hero-overlay"></div>
+
+  <div class="container lead-hero-grid">
+    <div class="lead-copy">
+      <p class="kicker">EcoPrime Shaheen Group</p>
+
+      <h1>Quiet, zero-emission lawn care for Cypress, Katy & West Houston.</h1>
+
+      <p class="lede">
+        Get reliable electric lawn mowing, edging, cleanup, and precision lawn maintenance
+        without the noise, fumes, or hassle.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:12816246514">Call 281-624-6514</a>
+        <a class="btn btn-ghost" href="#quote">Get a Free Quote</a>
+      </div>
+
+      <div class="trust">
+        <span class="badge"><b>✓</b> 100% electric equipment</span>
+        <span class="badge"><b>✓</b> No contracts required</span>
+        <span class="badge"><b>✓</b> Residential lawn care</span>
+      </div>
+    </div>
+
+    <div class="lead-form-card" id="quote">
+      <h2>Get a Fast Quote</h2>
+      <p>Send your address and service needs. We’ll respond quickly.</p>
+
+      <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+        <input type="hidden" name="_subject" value="EcoPrime Quote Request">
+        <input type="hidden" name="_next" value="https://ecoprimelawncare.com/thank-you.html">
+
+        <label>Name</label>
+        <input name="name" required>
+
+        <label>Phone</label>
+        <input name="phone" required>
+
+        <label>Service Address</label>
+        <input name="address" required>
+
+
+        <button class="btn btn-primary" type="submit">Request My Quote</button>
+      </form>
+
+      <small>Prefer phone? Call or text <b>281-624-6514</b>.</small>
+    </div>
+  </div>
+</section>
+    <section class="section">
+      <div class="container">
+        <h2>Popular services</h2>
+        <p>Choose a plan, then we tailor it to your property size, turf type, and preferred schedule.</p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Maintenance Mow</h3>
+            <p>Electric mowing, edging, blow-off, and clean lines—every visit.</p>
+          </div>
+          <div class="card">
+            <h3>Detail + Trim</h3>
+            <p>Shrub trimming, light bed cleanup, and touch-ups for curb appeal.</p>
+          </div>
+          <div class="card">
+            <h3>Seasonal Refresh</h3>
+            <p>Mulch/top-off, debris haul-off, and property reset when needed.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div>
+            <div style="font-weight:700;">Want a fast quote?</div>
+            <div style="color:var(--muted);">Tell us your address + preferred schedule.</div>
+          </div>
+          <a class="btn btn-primary" href="contact.html">Get a Quote</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+      <div>© <span id="y"></span> EcoPrime Lawn Care</div>
+      <div>
+        <a href="tel:12816246514">281-624-6514</a> ·
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

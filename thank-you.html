@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Booking Confirmed | EcoPrime Lawn Care</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        <img src="assets/img/ecoprime_logo_darkgreen.png" alt="EcoPrime Lawn Care logo" />
+        <div class="brand-text">
+          <strong>EcoPrime</strong>
+          <span>Quiet • Zero Emission • Precision</span>
+        </div>
+      </a>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="tel:12816246514">Call: 281-624-6514</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="section">
+    <div class="container">
+      <div class="confirm-card card">
+        <div class="confirm-icon">✓</div>
+        <h1 style="margin-top:0;">You're Booked!</h1>
+
+        <p id="confirm-name" style="color:var(--muted);"></p>
+
+        <div class="confirm-detail" id="confirm-detail"></div>
+
+        <p style="color:var(--muted);margin-top:18px;">
+          We'll contact you shortly to confirm your first service date.
+          Questions? Call or text us anytime.
+        </p>
+
+        <div class="hero-actions" style="justify-content:center;margin-top:20px;">
+          <a class="btn btn-primary" href="tel:12816246514">Call 281-624-6514</a>
+          <a class="btn btn-ghost" href="index.html">Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> EcoPrime Lawn Care</div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    var p       = new URLSearchParams(location.search);
+    var method  = p.get('method')  || 'card';
+    var name    = p.get('name')    || 'there';
+    var address = p.get('address') || '';
+    var price   = parseFloat(p.get('price') || '0');
+
+    document.getElementById('confirm-name').textContent = 'Thanks, ' + name + '!';
+
+    var methodLabel = method === 'paypal' ? 'PayPal'
+                    : method === 'card'   ? 'credit/debit card'
+                    : 'pending — we will contact you';
+    var detail = document.getElementById('confirm-detail');
+    detail.innerHTML =
+      '<strong>Service address:</strong> ' + address + '<br>' +
+      '<strong>Price:</strong> $' + (price ? price.toFixed(2) : '—') + ' per visit<br>' +
+      '<strong>Payment:</strong> ' + methodLabel;
+  </script>
+</body>
+</html>

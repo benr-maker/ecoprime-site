@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thank You | EcoPrime Lawn Care</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html">
+        <img src="assets/img/ecoprime_logo_darkgreen.png" alt="EcoPrime Lawn Care logo" />
+        <div class="brand-text">
+          <strong>EcoPrime</strong>
+          <span>Quiet • Zero Emission • Precision</span>
+        </div>
+      </a>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="tel:12816246514">Call: 281-624-6514</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="card">
+        <h1 style="margin-top:0;">Request received</h1>
+        <p style="color:var(--muted);">
+          Thanks—EcoPrime will reach out shortly. If you need immediate help, call or text <b>281-624-6514</b>.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="index.html">Back to Home</a>
+          <a class="btn btn-ghost" href="tel:12816246514">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© <span id="y"></span> EcoPrime Lawn Care</div>
+  </footer>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="160" viewBox="0 0 520 160" role="img" aria-label="EcoPrime Lawn Care">
+  <defs>
+    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#165043"/>
+      <stop offset="1" stop-color="#0f2f25"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="520" height="160" rx="22" fill="white"/>
+  <g transform="translate(28,26)">
+    <rect x="0" y="0" width="92" height="92" rx="16" fill="url(#g)" opacity="0.14"/>
+    <path d="M20 30h52M20 62h52" stroke="#0f2f25" stroke-width="8" stroke-linecap="round"/>
+    <path d="M22 70 L72 22" stroke="#165043" stroke-width="10" stroke-linecap="round" opacity="0.95"/>
+  </g>
+  <g transform="translate(140,48)">
+    <text x="0" y="24" font-family="Georgia, 'Times New Roman', serif" font-size="38" fill="#0f2f25" letter-spacing="1.2">ECOPRIME</text>
+    <text x="2" y="58" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="18" fill="#5c6b63" letter-spacing="3">LAWN CARE</text>
+  </g>
+</svg>
